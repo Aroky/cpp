@@ -73,6 +73,42 @@ void salidaDeInventario() {
     movimientoInventario(codigo, cantidad, "-");
 }
 
+void salidaDeInventario() {
+    string codigo = "";
+    int cantidad = 0;
+
+    system("cls");
+    cout << endl;
+    cout << "Salida de Productos del Inventario" << endl;
+    cout << "**********************************" << endl;
+    cout << "Ingrese el codigo del producto: ";
+    cin >> codigo;
+    cout << endl;
+    cout << "Ingrese la cantidad del producto: ";
+    cin >> cantidad;
+    cout << endl;
+
+    movimientoInventario(codigo, cantidad, "-");
+}
+
+void salidaDeInventario() {
+    string codigo = "";
+    int cantidad = 0;
+
+    system("cls");
+    cout << endl;
+    cout << "Salida de Productos del Inventario" << endl;
+    cout << "**********************************" << endl;
+    cout << "Ingrese el codigo del producto: ";
+    cin >> codigo;
+    cout << endl;
+    cout << "Ingrese la cantidad del producto: ";
+    cin >> cantidad;
+    cout << endl;
+
+    movimientoInventario(codigo, cantidad, "-");
+}
+
 int main(int argc, char const *argv[])
 {
     int opcion = 0;
