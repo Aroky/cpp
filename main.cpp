@@ -61,7 +61,7 @@ void salidaDeInventario() {
 
     system("cls");
     cout << endl;
-    cout << "Salida de Productos del Inventario" << endl;
+    cout << "Venta de productos" << endl;
     cout << "**********************************" << endl;
     cout << "Ingrese el codigo del producto: ";
     cin >> codigo;
@@ -73,7 +73,25 @@ void salidaDeInventario() {
     movimientoInventario(codigo, cantidad, "-");
 }
 
-void salidaDeInventario() {
+void ventas() {
+    string codigo = "";
+    int cantidad = 0;
+
+    system("cls");
+    cout << endl;
+    cout << "Compra de productos" << endl;
+    cout << "**********************************" << endl;
+    cout << "Ingrese el codigo del producto: ";
+    cin >> codigo;
+    cout << endl;
+    cout << "Ingrese la cantidad del producto: ";
+    cin >> cantidad;
+    cout << endl;
+
+    movimientoInventario(codigo, cantidad, "-");
+}
+
+void compras() {
     string codigo = "";
     int cantidad = 0;
 
@@ -88,25 +106,7 @@ void salidaDeInventario() {
     cin >> cantidad;
     cout << endl;
 
-    movimientoInventario(codigo, cantidad, "-");
-}
-
-void salidaDeInventario() {
-    string codigo = "";
-    int cantidad = 0;
-
-    system("cls");
-    cout << endl;
-    cout << "Salida de Productos del Inventario" << endl;
-    cout << "**********************************" << endl;
-    cout << "Ingrese el codigo del producto: ";
-    cin >> codigo;
-    cout << endl;
-    cout << "Ingrese la cantidad del producto: ";
-    cin >> cantidad;
-    cout << endl;
-
-    movimientoInventario(codigo, cantidad, "-");
+    movimientoInventario(codigo, cantidad, "+");
 }
 
 int main(int argc, char const *argv[])
@@ -138,6 +138,12 @@ int main(int argc, char const *argv[])
             break;
         case 3:
             salidaDeInventario();
+            break;
+        case 4:
+            ventas();
+            break;
+        case 5:
+            compras();
             break;
         
         default:
