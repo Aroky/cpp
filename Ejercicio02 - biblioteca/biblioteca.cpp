@@ -103,7 +103,7 @@ int main(int argc, char const *argv[])
         string buscar = "";
         system("cls");
         int opcion;
-        cout<< "escriba 1 para autor o escriba 2 para libro";
+        cout<< "Presione 1 para buscar por descripcion o prsione 2 para buscar por autor: ";
         cin>> opcion;
 
         if (opcion == 1)
