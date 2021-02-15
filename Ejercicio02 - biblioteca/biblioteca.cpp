@@ -54,7 +54,7 @@ void cargarLibros() {
     libros[3][2] = "Gregorio Martin Quetglás, Francisco Toledo Lobo, Vicente Cerveron Lleo";
     libros[4][2] = "Jorge L. Ortega Arjona";
     libros[5][2] = "Eugenia Bahit";
-    libros[6][2] = "Eva Gómez Ballester, Patricio Martínez Barco, Paloma Moreda Pozo, Armando Suarez Cueto, Andres Montoyo Guijarro, Estela Saquete Boro";
+    libros[6][2] = "Eva Gomez Ballester, Patricio Martínez Barco, Paloma Moreda Pozo, Armando Suarez Cueto, Andres Montoyo Guijarro, Estela Saquete Boro";
     libros[7][2] = "Solid Quality Learning";
     libros[8][2] = "Marta Elena Zorrilla Pantaleón, Rafael Duque Medina";
     libros[9][2] = "Maria José Aramburu Cabo , Ismael Sanz Blasco";
