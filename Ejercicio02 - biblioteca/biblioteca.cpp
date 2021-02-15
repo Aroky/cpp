@@ -8,8 +8,8 @@ string libros[39][2];
 
 void cargarLibros() {
     // Arreglo con categoria y descripcion
-	libros[0][0] = "Algoritmos"; libros[0][1] = "Algoritmos y Programacion (Guia para docentes)";
-	libros[1][0] = "Algoritmos"; libros[1][1] = "Apuntes de Algoritmos y Estructuras de Datos";
+	libros[0][0] = "Algoritmos"; libros[0][1] = "Algoritmos y Programacion (Guia para docentes)"; 
+	libros[1][0] = "Algoritmos"; libros[1][1] = "Apuntes de Algoritmos y Estructuras de Datos"; 
 	libros[2][0] = "Algoritmos"; libros[2][1] = "Breves Notas sobre Analisis de Algoritmos";
 	libros[3][0] = "Algoritmos"; libros[3][1] = "Fundamentos de Informatica y Programacion";
 	libros[4][0] = "Algoritmos"; libros[4][1] = "Temas selectos de estructuras de datos";
@@ -47,6 +47,46 @@ void cargarLibros() {
 	libros[36][0] = "Python"; libros[36][1] = "Python para ciencia e ingenieria";
 	libros[37][0] = "Python"; libros[37][1] = "Python para principiantes";
 	libros[38][0] = "Python"; libros[38][1] = "Python para todos";
+
+    libros[0][2] = "Juan Carlos Lopez Garcia";
+    libros[1][2] = "Javier Campos";
+    libros[2][2] = "Jorge L. Ortega Arjona";
+    libros[3][2] = "Gregorio Martin Quetglás, Francisco Toledo Lobo, Vicente Cerveron Lleo";
+    libros[4][2] = "Jorge L. Ortega Arjona";
+    libros[5][2] = "Eugenia Bahit";
+    libros[6][2] = "Eva Gómez Ballester, Patricio Martínez Barco, Paloma Moreda Pozo, Armando Suarez Cueto, Andres Montoyo Guijarro, Estela Saquete Boro";
+    libros[7][2] = "Solid Quality Learning";
+    libros[8][2] = "Marta Elena Zorrilla Pantaleón, Rafael Duque Medina";
+    libros[9][2] = "Maria José Aramburu Cabo , Ismael Sanz Blasco";
+    libros[10][2] = "Autor desconocido";
+    libros[11][2] = "Jorge L. Ortega Arjona";
+    libros[12][2] = "Jorge L. Ortega Arjona";
+    libros[13][2] = "Juan Palacio";
+    libros[14][2] = "Carlos Ble";
+    libros[15][2] = "Alejandro Peña Ayala";
+    libros[16][2] = "Eugenia Bahit";
+    libros[17][2] = "Henrik Kniberg";
+    libros[18][2] = "Juan Vallejo";
+    libros[19][2] = "Codigo abierto sin propietario ni autor";
+    libros[20][2] = "Esteban Machado Velasquez, Joaquin Caraballo Moreno, Yeray Darias Camacho";
+    libros[21][2] = "Codigo abierto sin propietario ni autor";
+    libros[22][2] = "Alberto García Serrano";
+    libros[23][2] = "Codigo abierto sin propietario ni autor";
+    libros[24][2] = "Diego Lazaro, Jairo Garcia Rincon";
+    libros[25][2] = "Eugenia Bahit";
+    libros[26][2] = "Fabien Potencier, Igor Wiedler, Traducido por Javier Eguiluz";
+    libros[27][2] = "Fabien Potencier, Igor Wiedler, Traducido por Javier Eguiluz";
+    libros[28][2] = "Fabien Potencier, Igor Wiedler, Traducido por Javier Eguiluz";
+    libros[29][2] = "Allen Downey, Jeffrey Elkner, Chris Meyers";
+    libros[30][2] = "Jason R. Briggs";
+    libros[31][2] = "Mark pilgrim";
+    libros[32][2] = "Mark pilgrim";
+    libros[33][2] = "Luis Eduardo Muñoz Guerrero, Omar Ivan Trejos Buriticá";
+    libros[34][2] = "Andres Marsal, Isabel Garcia";
+    libros[35][2] = "Guido van Rossum";
+    libros[36][2] = "Miguel Angel Suárez Ledo";
+    libros[37][2] = "Eugenia Bahit";
+    libros[38][2] = "Charles R. Severance";
 }
 
 
@@ -62,38 +102,80 @@ int main(int argc, char const *argv[])
     {
         string buscar = "";
         system("cls");
-        cout << "Ingrese la descripcion del libro que busca: ";
-        cin >> buscar;
+        int opcion;
+        cout<< "escriba 1 para autor o escriba 2 para libro";
+        cin>> opcion;
 
-        // busqueda
-        for (int i = 0; i < 39; i++)
+        if (opcion == 1)
         {
-            string libro = libros[i][1];
-            string libroEnminuscula = libro;
-            // transformamos a minuscula los string buscar y libro
-            transform(libroEnminuscula.begin(), libroEnminuscula.end(), libroEnminuscula.begin(), ::tolower);
-            transform(buscar.begin(), buscar.end(), buscar.begin(), ::tolower);
+            cout << "Ingrese la descripcion del libro que busca: ";
+            cin >> buscar;
 
-            if (libroEnminuscula.find(buscar) != string::npos) {
-                cout << "Libro encontrado: " << libro << endl;
+            // busqueda
+            for (int i = 0; i < 39; i++)
+            {
+                string libro = libros[i][1];
+                string libroEnminuscula = libro;
+                // transformamos a minuscula los string buscar y libro
+                transform(libroEnminuscula.begin(), libroEnminuscula.end(), libroEnminuscula.begin(), ::tolower);
+                transform(buscar.begin(), buscar.end(), buscar.begin(), ::tolower);
 
-                cout << "Tambien te sugerimos estos libros: " << endl;
+                if (libroEnminuscula.find(buscar) != string::npos) {
+                    cout << "Libro encontrado: " << libro << endl;
 
-                int sugerencia1 = rand() % 38 + 1;
-                int sugerencia2 = rand() % 38 + 1;
-                int sugerencia3 = rand() % 38 + 1;
+                    cout << "Tambien te sugerimos estos libros: " << endl;
 
-                cout << " Sugerencia 1: " << libros[sugerencia1][1] << endl;
-                cout << " Sugerencia 2: " << libros[sugerencia2][1] << endl;
-                cout << " Sugerencia 3: " << libros[sugerencia3][1] << endl;
+                    int sugerencia1 = rand() % 38 + 1;
+                    int sugerencia2 = rand() % 38 + 1;
+                    int sugerencia3 = rand() % 38 + 1;
 
-                salir = true;
-                break;
+                    cout << " Sugerencia 1: " << libros[sugerencia1][1] << endl;
+                    cout << " Sugerencia 2: " << libros[sugerencia2][1] << endl;
+                    cout << " Sugerencia 3: " << libros[sugerencia3][1] << endl;
+
+                    salir = true;
+                    break;
+                }
             }
         }
         
 
-        if (salir == false) {
+        if (opcion == 2)
+        {
+            cout << "Ingrese el autor del libro que busca: ";
+            cin >> buscar;
+
+            // busqueda
+            for (int i = 0; i < 39; i++)
+            {
+                string libro = libros[i][2];
+                string libroEnminuscula = libro;
+                // transformamos a minuscula los string buscar y libro
+                transform(libroEnminuscula.begin(), libroEnminuscula.end(), libroEnminuscula.begin(), ::tolower);
+                transform(buscar.begin(), buscar.end(), buscar.begin(), ::tolower);
+
+                if (libroEnminuscula.find(buscar) != string::npos) {
+                    cout << "Libro encontrado: " << libro << endl;
+
+                    cout << "Tambien te sugerimos estos libros: " << endl;
+
+                    int sugerencia1 = rand() % 38 + 1;
+                    int sugerencia2 = rand() % 38 + 1;
+                    int sugerencia3 = rand() % 38 + 1;
+
+                    cout << " Sugerencia 1: " << libros[sugerencia1][2] << endl;
+                    cout << " Sugerencia 2: " << libros[sugerencia2][2] << endl;
+                    cout << " Sugerencia 3: " << libros[sugerencia3][2] << endl;
+
+                    salir = true;
+                    break;
+                }
+            }
+        }
+        
+
+        if (salir == false) 
+        {
             char continuar = 'n';
 
             while(true) {
@@ -110,7 +192,8 @@ int main(int argc, char const *argv[])
             }
         }
     }
-    
 
     return 0;
+
+
 }
