@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
         cout << "2 - snake" << endl;
         cout << "0 - Salir" << endl;
         cout << endl;
-        cout << "Ingrese una opcion del menu, Y QUE INICIE EL JUEGO: ";
+        cout << "ingrese una opcion: ";
         cin >> opcion;
 
         switch (opcion)
